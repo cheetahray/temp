@@ -6,7 +6,7 @@ info:
     2.1.7 <br/>
     Segment 新增 routes 做為參數<br/>
     將 cidr 欄位正名 interfaceIp<br/>
-    增加 hexthop 欄位
+    增加 nexthop 欄位
     <br/>
     <br/>
     2.1.6 <br/>
@@ -986,11 +986,11 @@ paths:
           in: query
           name: zone
           description: 1是hicloud
-  '/maintenance/externalNet/{publicNetworkId}':
+  '/maintenance/externalNet/{networkId}':
     parameters:
       - schema:
           type: string
-        name: publicNetworkId
+        name: networkId
         in: path
         required: true
         description: 外部網路名稱
@@ -1071,7 +1071,7 @@ paths:
                       code: 'maintenance:0080'
                       message: 取得失敗
                       success: false
-      operationId: get-maintenance-externalNet-publicNetworkId
+      operationId: get-maintenance-externalNet-networkId
   /session/signin:
     post:
       summary: Ap Server Session 登入
@@ -1164,7 +1164,7 @@ paths:
                       code: 'session:0900'
                       message: 登出失敗
                       success: false
-      operationId: sessionSingout
+      operationId: sessionSignout
       parameters:
         - schema:
             type: string
